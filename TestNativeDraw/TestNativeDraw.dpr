@@ -3,7 +3,8 @@ program TestNativeDraw;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  Main in 'Main.pas' {Form1};
+  Main in 'Main.pas' {Form1},
+  FMX.Graphics.Native in '..\FMX.Graphics.Native.pas';
 
 {$R *.res}
 
