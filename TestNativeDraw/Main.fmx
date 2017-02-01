@@ -1,0 +1,454 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'FMX Native Draw by Aone (2017/02/02)'
+  ClientHeight = 730
+  ClientWidth = 485
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnShow = FormShow
+  DesignerMasterStyle = 3
+  object BackRectangle: TRectangle
+    Align = Client
+    Fill.Bitmap.Bitmap.PNG = {
+      89504E470D0A1A0A0000000D49484452000000100000001008060000001FF3FF
+      61000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+      003549444154384F633C77EEDC7F063CC0D0D010CAC20E98A034D960D480C160
+      00E37F2080B2B182F3E7CF4359D8C168200E030318180000FD0A845CBD5B6600
+      00000049454E44AE426082}
+    Fill.Bitmap.WrapMode = Tile
+    Fill.Kind = Bitmap
+    Size.Width = 485.000000000000000000
+    Size.Height = 319.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+  end
+  object TabControl1: TTabControl
+    Align = Top
+    Size.Width = 485.000000000000000000
+    Size.Height = 386.000000000000000000
+    Size.PlatformDefault = False
+    TabHeight = 49.000000000000000000
+    TabIndex = 1
+    TabOrder = 0
+    TabPosition = PlatformDefault
+    OnChange = TabControl1Change
+    Sizes = (
+      485s
+      337s
+      485s
+      337s)
+    object LineTab: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 242.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Line'
+      ExplicitSize.cx = 325.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object LineLayout: TLayout
+        Align = Top
+        Size.Width = 485.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object PixelRB: TRadioButton
+          Align = Left
+          IsChecked = True
+          Size.Width = 85.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = '1 Pixel'
+        end
+        object PointRB: TRadioButton
+          Align = Left
+          Position.X = 85.000000000000000000
+          Size.Width = 90.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Text = '1 Point'
+        end
+        object LineThicknessSpinBox: TSpinBox
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Left
+          TabOrder = 2
+          Cursor = crIBeam
+          Max = 10.000000000000000000
+          Value = 1.000000000000000000
+          ValueType = Float
+          Increment = 0.100000001490116100
+          Position.X = 175.000000000000000000
+          Position.Y = 9.000000000000000000
+          Size.Width = 126.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          OnChange = LineThicknessSpinBoxChange
+        end
+      end
+    end
+    object ShapeTab: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 243.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Shape'
+      ExplicitSize.cx = 325.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object Layout1: TLayout
+        Align = Top
+        Padding.Left = 5.000000000000000000
+        Padding.Top = 5.000000000000000000
+        Padding.Right = 5.000000000000000000
+        Padding.Bottom = 5.000000000000000000
+        Position.Y = 186.000000000000000000
+        Size.Width = 485.000000000000000000
+        Size.Height = 150.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object RadiusSpinBox: TTrackBar
+          Align = Top
+          CanParentFocus = True
+          Orientation = Horizontal
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 5.000000000000000000
+          Position.Y = 42.000000000000000000
+          Size.Width = 259.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Value = 5.000000000000000000
+          OnChange = ThicknessSpinBoxChange
+        end
+        object ThicknessSpinBox: TTrackBar
+          Align = Top
+          CanParentFocus = True
+          Orientation = Horizontal
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 5.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 259.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Value = 5.000000000000000000
+          OnChange = ThicknessSpinBoxChange
+        end
+        object CapListBox: TListBox
+          Align = MostRight
+          Margins.Right = 5.000000000000000000
+          Position.X = 405.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 70.000000000000000000
+          Size.Height = 140.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          DisableFocusEffect = True
+          Items.Strings = (
+            'Flat'
+            'Round')
+          DefaultItemStyles.ItemStyle = ''
+          DefaultItemStyles.GroupHeaderStyle = ''
+          DefaultItemStyles.GroupFooterStyle = ''
+          OnChange = CapListBoxChange
+          Viewport.Width = 70.000000000000000000
+          Viewport.Height = 140.000000000000000000
+        end
+        object DashListBox: TListBox
+          Align = MostRight
+          Margins.Right = 5.000000000000000000
+          Position.X = 264.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 136.000000000000000000
+          Size.Height = 140.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 3
+          DisableFocusEffect = True
+          Items.Strings = (
+            'Solid'
+            'Dash'
+            'Dot'
+            'DashDot'
+            'DashDotDot')
+          DefaultItemStyles.ItemStyle = ''
+          DefaultItemStyles.GroupHeaderStyle = ''
+          DefaultItemStyles.GroupFooterStyle = ''
+          OnChange = DashListBoxChange
+          Viewport.Width = 131.000000000000000000
+          Viewport.Height = 140.000000000000000000
+        end
+        object ArcLayout: TLayout
+          Align = Top
+          Position.X = 5.000000000000000000
+          Position.Y = 79.000000000000000000
+          Size.Width = 259.000000000000000000
+          Size.Height = 72.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 4
+          object Label3: TLabel
+            Align = MostLeft
+            Size.Width = 31.000000000000000000
+            Size.Height = 72.000000000000000000
+            Size.PlatformDefault = False
+            Text = 'Arc'
+          end
+          object ArcStartAngleTrackBar: TTrackBar
+            Align = Top
+            CanParentFocus = True
+            Max = 360.000000000000000000
+            Min = -360.000000000000000000
+            Orientation = Horizontal
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 31.000000000000000000
+            Size.Width = 228.000000000000000000
+            Size.Height = 32.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 5
+            OnChange = ThicknessSpinBoxChange
+          end
+          object ArcEndAngleTrackBar: TTrackBar
+            Align = Top
+            CanParentFocus = True
+            Max = 360.000000000000000000
+            Min = -360.000000000000000000
+            Orientation = Horizontal
+            Position.X = 31.000000000000000000
+            Position.Y = 37.000000000000000000
+            Size.Width = 228.000000000000000000
+            Size.Height = 32.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 4
+            Value = -90.000000000000000000
+            OnChange = ThicknessSpinBoxChange
+          end
+        end
+      end
+      object Layout2: TLayout
+        Align = Top
+        Padding.Left = 5.000000000000000000
+        Padding.Top = 5.000000000000000000
+        Padding.Right = 5.000000000000000000
+        Size.Width = 485.000000000000000000
+        Size.Height = 186.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object Rectangle1: TRectangle
+          Align = Client
+          Margins.Left = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Size.Width = 234.000000000000000000
+          Size.Height = 153.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object ShapeListBox: TListBox
+          Align = MostLeft
+          Position.X = 5.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 71.000000000000000000
+          Size.Height = 181.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          DisableFocusEffect = True
+          Items.Strings = (
+            'Rect'
+            'Ellipse'
+            'Arc'
+            'Path')
+          DefaultItemStyles.ItemStyle = ''
+          DefaultItemStyles.GroupHeaderStyle = ''
+          DefaultItemStyles.GroupFooterStyle = ''
+          OnChange = ShapeListBoxChange
+          Viewport.Width = 71.000000000000000000
+          Viewport.Height = 181.000000000000000000
+        end
+        object Layout7: TLayout
+          Align = MostRight
+          Position.X = 320.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 80.000000000000000000
+          Size.Height = 181.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          object StrokeColor: TComboColorBox
+            Align = Top
+            Color = claBlack
+            Margins.Bottom = 5.000000000000000000
+            Size.Width = 80.000000000000000000
+            Size.Height = 32.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            OnChange = ThicknessSpinBoxChange
+          end
+          object StrokeColor1: TComboColorBox
+            Align = Top
+            Color = claYellow
+            Margins.Bottom = 5.000000000000000000
+            Position.Y = 37.000000000000000000
+            Size.Width = 80.000000000000000000
+            Size.Height = 32.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            OnChange = ThicknessSpinBoxChange
+          end
+          object StrokeGradientChk: TCheckBox
+            Align = Top
+            Margins.Bottom = 5.000000000000000000
+            Position.Y = 74.000000000000000000
+            Size.Width = 80.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            Text = 'Gradient'
+            OnChange = ThicknessSpinBoxChange
+          end
+        end
+        object Arc1: TArc
+          Align = Client
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Size.Width = 200.000000000000000000
+          Size.Height = 202.000000000000000000
+          Size.PlatformDefault = False
+          Visible = False
+          EndAngle = -90.000000000000000000
+        end
+        object Ellipse1: TEllipse
+          Align = Client
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Size.Width = 200.000000000000000000
+          Size.Height = 202.000000000000000000
+          Size.PlatformDefault = False
+          Visible = False
+        end
+        object Path1: TPath
+          Align = Client
+          Data.Path = {
+            2400000000000000DCDE4A43B76D704101000000DC1E08436EBB2A4201000000
+            B7BD8A42B79D8C42010000006EFB2642DC0E094301000000B86D6141DCC64B43
+            010000006EFB26426E43874301000000B7BD8A426EA3A84301000000DC1E0843
+            6E73B64301000000DCDE4A436E47C443010000006ECB86436E73B64301000000
+            6E2BA8436EA3A843010000006EFBB5436E438743010000006ECFC343DCC64B43
+            010000006EFBB543DC0E0943010000006E2BA843B79D8C42010000006ECB8643
+            6EBB2A4201000000DCDE4A43B86D704103000000DCDE4A43B76D704100000000
+            DCDE4A436E5B674201000000DCC66943DC1E0143010000006E079943B82DC942
+            010000006EC38A43DCDE2C43010000006E67AE43DCC64B43010000006EC38A43
+            DCB66A43010000006E0799436E7F994301000000DCC669436E3B8B4301000000
+            DCDE4A436EDFAE4301000000DCEE2B436E3B8B4301000000B74DC7426E7F9943
+            01000000DC360043DCB66A43010000006E9B6342DCC64B4301000000DC360043
+            DCDE2C4301000000B84DC742B82DC94201000000DCEE2B43DC1E014301000000
+            DCDE4A436E5B674203000000DCDE4A436E5B6742}
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Size.Width = 200.000000000000000000
+          Size.Height = 202.000000000000000000
+          Size.PlatformDefault = False
+          Visible = False
+        end
+        object Layout3: TLayout
+          Align = MostRight
+          Position.X = 400.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 80.000000000000000000
+          Size.Height = 181.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 6
+          object FillColor: TComboColorBox
+            Align = Top
+            Color = xFFE0E0E0
+            Margins.Bottom = 5.000000000000000000
+            Size.Width = 80.000000000000000000
+            Size.Height = 32.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            OnChange = ThicknessSpinBoxChange
+          end
+          object FillColor1: TComboColorBox
+            Align = Top
+            Color = claRed
+            Margins.Bottom = 5.000000000000000000
+            Position.Y = 37.000000000000000000
+            Size.Width = 80.000000000000000000
+            Size.Height = 32.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            OnChange = ThicknessSpinBoxChange
+          end
+          object FillGradientChk: TCheckBox
+            Align = Top
+            Margins.Bottom = 5.000000000000000000
+            Position.Y = 74.000000000000000000
+            Size.Width = 80.000000000000000000
+            Size.Height = 19.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            Text = 'Gradient'
+            OnChange = ThicknessSpinBoxChange
+          end
+        end
+        object Label2: TLabel
+          Align = Top
+          Position.X = 76.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 244.000000000000000000
+          Size.Height = 23.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.HorzAlign = Center
+          Text = 'Default Draw'
+        end
+      end
+    end
+  end
+  object Label1: TLabel
+    Align = Bottom
+    Margins.Left = 5.000000000000000000
+    Position.X = 5.000000000000000000
+    Position.Y = 705.000000000000000000
+    Size.Width = 480.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'FMX Native Draw by Aone (2017/02/02)'
+  end
+  object Selection1: TSelection
+    GripSize = 10.000000000000000000
+    HideSelection = False
+    Padding.Left = 10.000000000000000000
+    Padding.Top = 10.000000000000000000
+    Padding.Right = 10.000000000000000000
+    Padding.Bottom = 10.000000000000000000
+    Proportional = False
+    Position.X = 20.000000000000000000
+    Position.Y = 405.000000000000000000
+    Size.Width = 200.000000000000000000
+    Size.Height = 200.000000000000000000
+    Size.PlatformDefault = False
+    ShowHandles = True
+    object PaintBox1: TPaintBox
+      Align = Client
+      HitTest = False
+      Size.Width = 180.000000000000000000
+      Size.Height = 180.000000000000000000
+      Size.PlatformDefault = False
+      OnPaint = PaintBox1Paint
+    end
+  end
+end
