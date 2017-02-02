@@ -60,23 +60,23 @@ type
   public
     // 原生绘图
     procedure NativeDraw(const ARect: TRectF; const ADrawProc: TDrawProc);
-    // 涂色 + 线色一次完成
-    procedure DrawRect(const ARect: TRectF; const XRadius, YRadius: Single; const ACorners: TCorners; const AOpacity: Single; const AFill: TBrush; const AStroke: TStrokeBrush; const ACornerType: TCornerType = TCornerType.Round; const Inside: Boolean = False); overload;
-    procedure DrawPath(const APath: TPathData; const AOpacity: Single; const AFill: TBrush; const AStroke: TStrokeBrush); overload;
-    procedure DrawEllipse(const ARect: TRectF; const AOpacity: Single; const AFill: TBrush; const AStroke: TStrokeBrush; const Inside: Boolean = False); overload;
-    procedure DrawArc(const Center, Radius: TPointF; StartAngle, SweepAngle: Single; const AOpacity: Single; const AFill: TBrush; const AStroke: TStrokeBrush; const Inside: Boolean = False); overload;
-    procedure DrawPolygon(const Points: TPolygon; const AOpacity: Single; const AFill: TBrush; const AStroke: TStrokeBrush); overload;
-  {$IFDEF UseNativeDraw}
-  private
+    // 涂色 + 线色一次完成
+    procedure DrawRect(const ARect: TRectF; const XRadius, YRadius: Single; const ACorners: TCorners; const AOpacity: Single; const AFill: TBrush; const AStroke: TStrokeBrush; const ACornerType: TCornerType = TCornerType.Round; const Inside: Boolean = False); overload;
+    procedure DrawPath(const APath: TPathData; const AOpacity: Single; const AFill: TBrush; const AStroke: TStrokeBrush); overload;
+    procedure DrawEllipse(const ARect: TRectF; const AOpacity: Single; const AFill: TBrush; const AStroke: TStrokeBrush; const Inside: Boolean = False); overload;
+    procedure DrawArc(const Center, Radius: TPointF; StartAngle, SweepAngle: Single; const AOpacity: Single; const AFill: TBrush; const AStroke: TStrokeBrush; const Inside: Boolean = False); overload;
+    procedure DrawPolygon(const Points: TPolygon; const AOpacity: Single; const AFill: TBrush; const AStroke: TStrokeBrush); overload;
+  {$IFDEF UseNativeDraw}
+  private
     {$IF Defined(IOS) or Defined(ANDROID)}
-    procedure ApplyGradient({$IFDEF ANDROID}const Paint1: JPaint;{$ENDIF} const ABrush: TBrush; const ARect: TRectF);
+    procedure ApplyGradient({$IFDEF ANDROID}const Paint1: JPaint;{$ENDIF} const ABrush: TBrush; const ARect: TRectF);
     procedure ApplyFill({$IFDEF ANDROID}const Paint1: JPaint;{$ENDIF} const ABrush: TBrush; const ARect: TRectF; const AOpacity: Single);
     procedure DrawFill({$IFDEF ANDROID}const Paint1: JPaint;{$ENDIF} const ABrush: TBrush; const SrcRect, DesRect: TRectF; const AOpacity: Single);
     procedure ApplyStroke({$IFDEF ANDROID}const Paint1: JPaint;{$ENDIF} const AStroke: TStrokeBrush; const ARect: TRectF; const AOpacity: Single);
     {$ENDIF}
   public
-    {$IF Defined(IOS) or Defined(ANDROID)}
-    // 下列为 Canvas 原有函数
+    {$IF Defined(IOS) or Defined(ANDROID)}
+    // 下列为 Canvas 原有函数
     procedure DrawLine(const APt1, APt2: TPointF; const AOpacity: Single); overload;
     procedure DrawLine(const APt1, APt2: TPointF; const AOpacity: Single; const ABrush: TStrokeBrush); overload;
 
@@ -98,7 +98,7 @@ type
     procedure FillArc(const Center, Radius: TPointF; StartAngle, SweepAngle: Single; const AOpacity: Single); overload;
     procedure FillArc(const Center, Radius: TPointF; StartAngle, SweepAngle: Single; const AOpacity: Single; const ABrush: TBrush); overload;
     procedure DrawArc(const Center, Radius: TPointF; StartAngle, SweepAngle: Single; const AOpacity: Single); overload;
-    procedure DrawArc(const Center, Radius: TPointF; StartAngle, SweepAngle: Single; const AOpacity: Single; const ABrush: TStrokeBrush); overload;
+    procedure DrawArc(const Center, Radius: TPointF; StartAngle, SweepAngle: Single; const AOpacity: Single; const ABrush: TStrokeBrush); overload;
 
     procedure FillPolygon(const Points: TPolygon; const AOpacity: Single); overload;
     procedure DrawPolygon(const Points: TPolygon; const AOpacity: Single); overload;
@@ -107,7 +107,7 @@ type
     procedure ExcludeClipRect(const ARect: TRectF); overload;
     {$ENDIF}
   {$ENDIF}
-  end;
+  end;
 
 implementation
 
@@ -121,8 +121,8 @@ end;
 
 procedure TCanvasHelper.DrawRect(const ARect: TRectF; const XRadius, YRadius: Single; const ACorners: TCorners; const AOpacity: Single; const AFill: TBrush; const AStroke: TStrokeBrush; const ACornerType: TCornerType = TCornerType.Round; const Inside: Boolean = False);
 var R: TRectF;
-begin
-     R := ARect;
+begin
+     R := ARect;
 
      // 线在区内
      if Inside and (AStroke <> nil) and (AStroke.Kind <> TBrushKind.None) then
@@ -132,16 +132,16 @@ var R: TRectF;
      DrawRect(R, XRadius, YRadius, ACorners, AOpacity, AStroke, ACornerType);
 end;
 
-procedure TCanvasHelper.DrawPath(const APath: TPathData; const AOpacity: Single; const AFill: TBrush; const AStroke: TStrokeBrush);
+procedure TCanvasHelper.DrawPath(const APath: TPathData; const AOpacity: Single; const AFill: TBrush; const AStroke: TStrokeBrush);
 begin
-     FillPath(APath, AOpacity, AFill);
+     FillPath(APath, AOpacity, AFill);
      DrawPath(APath, AOpacity, AStroke);
 end;
 
-procedure TCanvasHelper.DrawEllipse(const ARect: TRectF; const AOpacity: Single; const AFill: TBrush; const AStroke: TStrokeBrush; const Inside: Boolean = False);
-var R: TRectF;
+procedure TCanvasHelper.DrawEllipse(const ARect: TRectF; const AOpacity: Single; const AFill: TBrush; const AStroke: TStrokeBrush; const Inside: Boolean = False);
+var R: TRectF;
 begin
-     R := ARect;
+     R := ARect;
 
      // 线在区内
      if Inside and (AStroke <> nil) and (AStroke.Kind <> TBrushKind.None) then
@@ -376,7 +376,7 @@ end;
 
 procedure TCanvasHelper.DrawPath(const APath: TPathData; const AOpacity: Single; const AFill: TBrush; const AStroke: TStrokeBrush);
 var i: Integer;
-    Path1: JPath;
+    Path1: JPath;
     Paint1: JPaint;
     SrcRect: TRectF;
 begin
@@ -968,11 +968,11 @@ end;
 
 procedure TCanvasHelper.FillArc(const Center, Radius: TPointF; StartAngle, SweepAngle: Single; const AOpacity: Single; const ABrush: TBrush);
 begin
-     DrawArc(Center, Radius, StartAngle, SweepAngle, AOpacity, ABrush, nil);
+     DrawArc(Center, Radius, StartAngle, SweepAngle, AOpacity, ABrush, nil);
 end;
 
 procedure TCanvasHelper.DrawArc(const Center, Radius: TPointF; StartAngle, SweepAngle: Single; const AOpacity: Single);
-begin
+begin
      DrawArc(Center, Radius, StartAngle, SweepAngle, AOpacity, nil, Self.Stroke);
 end;
 
