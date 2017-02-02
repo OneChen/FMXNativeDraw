@@ -11,7 +11,7 @@ uses
 
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Edit,
   FMX.EditBox, FMX.SpinBox, FMX.Controls.Presentation, FMX.StdCtrls, FMX.Objects,
-  ONE.Selection, FMX.Layouts, FMX.TabControl, FMX.ListBox, FMX.Colors;
+  FMX.Layouts, FMX.TabControl, FMX.ListBox, FMX.Colors;
 
 type
   TForm1 = class(TForm)
