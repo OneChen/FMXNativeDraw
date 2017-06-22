@@ -1,0 +1,112 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'TOneArc by Aone'
+  ClientHeight = 645
+  ClientWidth = 454
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 3
+  object Layout2: TLayout
+    Align = Top
+    Size.Width = 454.000000000000000000
+    Size.Height = 176.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object ColorPanel1: TColorPanel
+      Align = MostRight
+      Color = claWhite
+      Margins.Left = 10.000000000000000000
+      Margins.Top = 10.000000000000000000
+      Margins.Right = 10.000000000000000000
+      Margins.Bottom = 10.000000000000000000
+      Position.X = 294.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 150.000000000000000000
+      Size.Height = 156.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      OnChange = ColorPanel1Change
+    end
+    object EndAngleTrackBar: TTrackBar
+      Align = Top
+      CanParentFocus = True
+      Max = 360.000000000000000000
+      Orientation = Horizontal
+      Margins.Bottom = 10.000000000000000000
+      Position.Y = 42.000000000000000000
+      Size.Width = 284.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      OnChange = EndAngleTrackBarChange
+    end
+    object Layout1: TLayout
+      Align = Top
+      Position.Y = 126.000000000000000000
+      Size.Width = 284.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object CapFlatRB: TRadioButton
+        Align = Left
+        GroupName = 'Cap'
+        IsChecked = True
+        Size.Width = 106.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Cap.Flat'
+        OnChange = CapFlatRBChange
+      end
+      object CapRoundRB: TRadioButton
+        Align = Left
+        GroupName = 'Cap'
+        Position.X = 106.000000000000000000
+        Size.Width = 120.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'Cap.Round'
+        OnChange = CapFlatRBChange
+      end
+    end
+    object StartAngleTrackBar: TTrackBar
+      Align = Top
+      CanParentFocus = True
+      Max = 360.000000000000000000
+      Orientation = Horizontal
+      Margins.Bottom = 10.000000000000000000
+      Size.Width = 284.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      OnChange = StartAngleTrackBarChange
+    end
+    object ThicknessTrackBar: TTrackBar
+      Align = Top
+      CanParentFocus = True
+      Orientation = Horizontal
+      Margins.Bottom = 10.000000000000000000
+      Position.Y = 84.000000000000000000
+      Size.Width = 284.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      OnChange = ThicknessTrackBarChange
+    end
+  end
+  object Selection1: TSelection
+    GripSize = 10.000000000000000000
+    HideSelection = False
+    Proportional = False
+    Position.X = 20.000000000000000000
+    Position.Y = 195.000000000000000000
+    Size.Width = 200.000000000000000000
+    Size.Height = 200.000000000000000000
+    Size.PlatformDefault = False
+    ShowHandles = True
+  end
+end
